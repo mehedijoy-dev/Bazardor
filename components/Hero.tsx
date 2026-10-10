@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { banglaToday } from "@/lib/bn";
+import ScrollButton from "./ScrollButton";
 
 export default function Hero() {
   return (
@@ -18,9 +19,9 @@ export default function Hero() {
           বিস্তারিত, গড়, সর্বনিম্ন-সর্বাধিক এবং দামের পরিবর্তন এক জায়গায়।
         </p>
 
-        <a href="#সব-পণ্য" className="btn btn-primary">
+        <ScrollButton targetId="সব-পণ্য" className="btn btn-primary">
           সব পণ্য দেখুন
-        </a>
+        </ScrollButton>
       </div>
 
       <Image

@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="bn" data-theme="bazar">
+    <html lang="bn" data-theme="bazar" data-scroll-behavior="smooth">
       <body className={`${font.className} bg-base-200 text-base-content`}>
         <Navbar />
         <Ticker />

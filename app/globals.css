@@ -32,6 +32,7 @@
 
 html {
   font-size: 18px;
+  scroll-behavior: smooth;
 }
 body {
   line-height: 1.65;
