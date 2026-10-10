@@ -1,38 +1,28 @@
 import { getProducts } from "@/lib/api";
 import { formatPct, toBn, UNIT_SHORT } from "@/lib/bn";
+import { trendArrow, trendStyle } from "@/lib/trend";
 
 export default async function Ticker() {
   const products = await getProducts();
 
-  const items = products.map((p) => {
-    const color =
-      p.change.dir === "up"
-        ? "text-green-600 font-semibold"
-        : p.change.dir === "down"
-          ? "text-red-600 font-semibold"
-          : "text-gray-500";
-    const arrow =
-      p.change.dir === "up" ? "▲" : p.change.dir === "down" ? "▼" : "—";
-
-    return (
-      <span
-        key={p.id}
-        className="mx-5 inline-flex items-center gap-2 whitespace-nowrap text-sm"
-      >
-        <span>{p.image}</span>
-        <span className="font-medium">{p.nameBn}</span>
-        <span>
-          {toBn(p.today.toLocaleString("en-US"))} টাকা/{UNIT_SHORT[p.unit]}
-        </span>
-        <span className={color}>
-          {arrow} {formatPct(p.change.pct)}%
-        </span>
+  const items = products.map((p) => (
+    <span
+      key={p.id}
+      className="inline-flex items-center gap-2 whitespace-nowrap border-r border-base-300 px-5 text-base"
+    >
+      <span>{p.image}</span>
+      <span className="font-semibold">{p.nameBn}</span>
+      <span className="text-base-content/85">
+        {toBn(p.today.toLocaleString("en-US"))} টাকা/{UNIT_SHORT[p.unit]}
       </span>
-    );
-  });
+      <span className={`font-semibold ${trendStyle(p.change.dir).text}`}>
+        {trendArrow(p.change.dir)} {formatPct(p.change.pct)}%
+      </span>
+    </span>
+  ));
 
   return (
-    <div className="marquee overflow-hidden border-b border-base-300 bg-base-200 py-2">
+    <div className="marquee overflow-hidden border-b border-base-300 bg-base-100 py-2">
       <div className="marquee-track">
         <div className="flex">{items}</div>
         <div className="flex" aria-hidden="true">

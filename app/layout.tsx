@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Hind_Siliguri } from "next/font/google";
+import { Noto_Sans_Bengali } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import Navbar from "@/components/Navbar";
 import Ticker from "@/components/Ticker";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const font = Hind_Siliguri({
+const font = Noto_Sans_Bengali({
   subsets: ["bengali", "latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -22,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="bn" data-theme="light">
-      <body className={`${font.className} bg-base-100 text-base-content`}>
+    <html lang="bn" data-theme="bazar">
+      <body className={`${font.className} bg-base-200 text-base-content`}>
         <Navbar />
         <Ticker />
         <main className="mx-auto min-h-[60vh] max-w-6xl px-4 py-6">

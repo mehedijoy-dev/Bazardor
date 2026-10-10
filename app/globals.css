@@ -1,6 +1,18 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+@plugin "daisyui/theme" {
+  name: "bazar";
+  default: true;
+  color-scheme: light;
+  --color-base-100: #fcfdfb;
+  --color-base-200: #f1f5f0;
+  --color-base-300: #e1e8df;
+  --color-base-content: #14231a;
+  --color-primary: #0a8a42;
+  --color-primary-content: #ffffff;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -16,4 +28,12 @@
 }
 .marquee:hover .marquee-track {
   animation-play-state: paused;
+}
+
+html {
+  font-size: 18px;
+}
+body {
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
