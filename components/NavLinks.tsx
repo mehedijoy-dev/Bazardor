@@ -15,7 +15,7 @@ export default function NavLinks({ categories }: { categories: Category[] }) {
             key={c.id}
             href={`/category/${c.slug}`}
             className={`btn btn-ghost whitespace-nowrap text-base ${
-              active ? "bg-primary/10 text-primary" : ""
+              active ? "bg-primary text-primary-content hover:bg-primary" : ""
             }`}
           >
             {c.icon} {c.nameBn}

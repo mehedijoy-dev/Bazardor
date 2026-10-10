@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getCategories } from "@/lib/api";
 import { banglaToday } from "@/lib/bn";
+import AuthButtons from "./AuthButtons";
 import NavLinks from "./NavLinks";
 
 export default async function Navbar() {
@@ -23,18 +24,11 @@ export default async function Navbar() {
             </span>
             <div className="leading-tight">
               <p className="text-lg font-bold">বাজার দর</p>
-              <p className="text-xs text-base-content/75">{banglaToday()}</p>
+              <p className="text-xs text-base-content/60">{banglaToday()}</p>
             </div>
           </Link>
 
-          <div className="flex gap-2">
-            <Link href="/signin" className="btn btn-sm sm:btn-md btn-ghost">
-              সাইন ইন
-            </Link>
-            <Link href="/signup" className="btn btn-sm sm:btn-md btn-primary">
-              সাইন আপ
-            </Link>
-          </div>
+          <AuthButtons />
         </div>
 
         <NavLinks categories={categories} />
