@@ -29,3 +29,12 @@ export const banglaToday = () =>
     month: "long",
     year: "numeric",
   });
+
+export const bnToNum = (v: number | string) =>
+  typeof v === "number"
+    ? v
+    : parseFloat(
+        String(v)
+          .replace(/[০-৯]/g, (d) => String("০১২৩৪৫৬৭৮৯".indexOf(d)))
+          .replace(/[,\s]/g, ""),
+      ) || 0;
