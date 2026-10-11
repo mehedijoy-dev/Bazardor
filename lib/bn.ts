@@ -38,3 +38,10 @@ export const bnToNum = (v: number | string) =>
           .replace(/[০-৯]/g, (d) => String("০১২৩৪৫৬৭৮৯".indexOf(d)))
           .replace(/[,\s]/g, ""),
       ) || 0;
+
+export const banglaShortDate = () =>
+  new Date().toLocaleDateString("bn-BD", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });

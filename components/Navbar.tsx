@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getCategories } from "@/lib/api";
-import { banglaToday } from "@/lib/bn";
+import { banglaShortDate, banglaToday } from "@/lib/bn";
 import AuthButtons from "./AuthButtons";
 import NavLinks from "./NavLinks";
 
@@ -10,10 +10,10 @@ export default async function Navbar() {
 
   return (
     <header className="border-b border-base-300 bg-base-100">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="flex items-center justify-between py-3">
-          <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
+      <div className="mx-auto max-w-6xl px-3 sm:px-4">
+        <div className="flex items-center justify-between gap-2 py-3">
+          <Link href="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary sm:h-10 sm:w-10">
               <Image
                 src="/logo-icon.png"
                 alt="বাজার দর"
@@ -22,9 +22,14 @@ export default async function Navbar() {
                 className="brightness-0 invert"
               />
             </span>
-            <div className="leading-tight">
-              <p className="text-lg font-bold">বাজার দর</p>
-              <p className="text-xs text-base-content/60">{banglaToday()}</p>
+            <div className="min-w-0 leading-tight">
+              <p className="text-base font-bold sm:text-lg">বাজার দর</p>
+              <p className="whitespace-nowrap text-[11px] text-base-content/60 sm:hidden">
+                {banglaShortDate()}
+              </p>
+              <p className="hidden whitespace-nowrap text-xs text-base-content/60 sm:block">
+                {banglaToday()}
+              </p>
             </div>
           </Link>
 

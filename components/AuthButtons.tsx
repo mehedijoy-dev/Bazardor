@@ -13,10 +13,16 @@ export default function AuthButtons() {
   if (!session) {
     return (
       <div className="flex gap-2">
-        <Link href="/signin" className="btn btn-sm sm:btn-md btn-ghost">
+        <Link
+          href="/signin"
+          className="btn btn-sm sm:btn-md btn-ghost px-2 sm:px-4"
+        >
           সাইন ইন
         </Link>
-        <Link href="/signup" className="btn btn-sm sm:btn-md btn-primary">
+        <Link
+          href="/signup"
+          className="btn btn-sm sm:btn-md btn-primary px-3 sm:px-4"
+        >
           সাইন আপ
         </Link>
       </div>
