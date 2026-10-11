@@ -10,7 +10,7 @@ export default async function Navbar() {
 
   return (
     <>
-      <header className="border-b border-base-300 bg-base-100">
+      <header className="relative z-50 border-b border-base-300 bg-base-100">
         <div className="mx-auto max-w-6xl px-3 sm:px-4">
           <div className="flex items-center justify-between gap-2 py-3">
             <Link href="/" className="flex min-w-0 items-center gap-2 sm:gap-3">

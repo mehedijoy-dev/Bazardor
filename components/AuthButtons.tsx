@@ -81,7 +81,7 @@ export default function AuthButtons() {
 
       <ul
         tabIndex={0}
-        className="dropdown-content menu z-10 mt-2 w-60 rounded-xl border border-base-300 bg-base-100 p-2 shadow-lg"
+        className="dropdown-content menu z-50 mt-2 w-60 rounded-xl border border-base-300 bg-base-100 p-2 shadow-lg"
       >
         <li className="pointer-events-none px-3 py-2">
           <p className="font-semibold">{user.name}</p>
