@@ -38,3 +38,8 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
+
+html,
+body {
+  font-family: "Noto Sans Bengali", system-ui, sans-serif;
+}

@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import { Noto_Sans_Bengali } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import Navbar from "@/components/Navbar";
 import Ticker from "@/components/Ticker";
 import Footer from "@/components/Footer";
 import "./globals.css";
-
-const font = Noto_Sans_Bengali({
-  subsets: ["bengali", "latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
   title: "বাজার দর | BazarDor",
@@ -23,7 +17,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="bn" data-theme="bazar" data-scroll-behavior="smooth">
-      <body className={`${font.className} bg-base-200 text-base-content`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="bg-base-200 text-base-content">
         <Navbar />
         <Ticker />
         <main className="mx-auto min-h-[60vh] max-w-6xl px-4 py-6">
