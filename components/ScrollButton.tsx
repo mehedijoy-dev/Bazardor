@@ -15,7 +15,7 @@ export default function ScrollButton({
     e.preventDefault();
 
     const start = window.scrollY;
-    const end = el.getBoundingClientRect().top + start - 16;
+    const end = el.getBoundingClientRect().top + start - 80;
     const distance = end - start;
     const duration = 800;
     const ease = (t: number) =>

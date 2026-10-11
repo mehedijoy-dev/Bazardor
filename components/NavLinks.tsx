@@ -7,7 +7,7 @@ export default function NavLinks({ categories }: { categories: Category[] }) {
   const pathname = usePathname();
 
   return (
-    <nav className="flex gap-1 overflow-x-auto pb-2">
+    <nav className="flex gap-1 overflow-x-auto py-2">
       {categories.map((c) => {
         const active = pathname === `/category/${c.slug}`;
         return (
