@@ -41,5 +41,9 @@ body {
 
 html,
 body {
-  font-family: "Noto Sans Bengali", system-ui, sans-serif;
+  font-family: "Noto Sans Bengali", "Hind Siliguri", system-ui, sans-serif;
+}
+
+body {
+  font-weight: 300;
 }
